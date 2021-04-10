@@ -1,0 +1,13 @@
+[package]
+name = "{{project-name}}"
+version = "0.1.0"
+authors = [{{authors}}]
+edition = "2018"
+
+[[bin]]
+name = "{{crate_name}}"
+path = "src/main.rs"
+
+[dependencies]
+fluence = { version="0.5.0", feature=["log"]}
+log = "0.4.14"
