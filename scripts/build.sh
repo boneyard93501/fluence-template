@@ -2,4 +2,5 @@
 
 mkdir -p artifacts
 rm -f artifacts/*.wasm
-cp local_storage/target/wasm32-wasi/release/{{crate_name}}.wasm artifacts/
+fce build --release
+cp target/wasm32-wasi/release/{{crate_name}}.wasm artifacts/
