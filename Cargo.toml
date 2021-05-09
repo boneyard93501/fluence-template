@@ -14,5 +14,8 @@ path = "src/main.rs"
 fluence = { version="0.6.2", features=["logger"]}
 log = "0.4.14"
 
+[dev-dependencies]
+fluence-test = "0.1.4"
+
 [profile.release]
 opt-level = "s"
