@@ -2,5 +2,5 @@
 
 mkdir -p artifacts
 rm -f artifacts/*.wasm
-fce build --release
+marine build --release
 cp target/wasm32-wasi/release/{{crate_name}}.wasm artifacts/
