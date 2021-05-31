@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-use fluence::{fce, module_manifest, WasmLoggerBuilder};
+use fluence::{marine, module_manifest, WasmLoggerBuilder};
 
 module_manifest!();
 
@@ -22,7 +22,19 @@ pub fn main() {
     WasmLoggerBuilder::new().build().unwrap();
 }
 
-#[fce]
+#[marine]
 pub fn greeting(name: String) -> String {
     format!("Hi, {}", name)
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use fluence_test::marine_test;
+    #[marine_test(config_path = "../Config.toml", modules_dir = "artificats/modules")]
+    fn test_greeting() {
+        let name = "Marine".to_string();
+        let res = greeting(name.clone());
+        assert_eq!(res, format!("Hi, {}", name));
+    }
 }
