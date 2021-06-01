@@ -2,4 +2,5 @@ modules_dir = "artifacts/"
 
 [[module]]
     name = "{{crate_name}}"
+    mem_pages_count = 1
     logger_enabled = true
