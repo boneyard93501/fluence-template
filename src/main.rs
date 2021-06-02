@@ -29,13 +29,12 @@ pub fn greeting(name: String) -> String {
 
 #[cfg(test)]
 mod tests {
-    use crate::greeting;
     use fluence_test::marine_test;
 
     #[marine_test(config_path = "../Config.toml", modules_dir = "../artifacts")]
     fn test_greeting() {
         let name = "Marine".to_string();
-        let res = greeting(name.clone());
+        let res = greeting.greeting(name.clone());
         assert_eq!(res, format!("Hi, {}", name));
     }
 }
