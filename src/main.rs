@@ -33,8 +33,8 @@ mod tests {
 
     #[marine_test(config_path = "../Config.toml", modules_dir = "../artifacts")]
     fn test_greeting() {
-        let name = "Marine".to_string();
-        let res = greeting.greeting(name.clone());
+        let name = "Marine";
+        let res = greeting.greeting(name.to_string());
         assert_eq!(res, format!("Hi, {}", name));
     }
 }
