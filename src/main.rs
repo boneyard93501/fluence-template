@@ -27,6 +27,19 @@ pub fn greeting(name: String) -> String {
     format!("Hi, {}", name)
 }
 
+// To run tests:
+// cargo test --release
+// Since the unit tests are using the wasm module via the marine_test crate import
+// the modules and Config.toml need to exist. That is, run ./build.sh before you run cargo test.
+// Moreover, the test function(s) need to be prefixed by the wasm module namespace, which
+// generally is derived from the project name.
+// if you name the project "greeting", e.g., cargo generate -g https:// ... --name greeting
+// the unit test can be executed as is. If not, the project needs to replace the "greeting" 
+// reference in place
+// if
+// cargo generate -g https:// ... --name project-name
+// then
+// let res = project_name.greeting(name.to_string());
 #[cfg(test)]
 mod tests {
     use fluence_test::marine_test;
