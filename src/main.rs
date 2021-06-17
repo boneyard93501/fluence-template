@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-use fluence::{marine, module_manifest, WasmLoggerBuilder};
+use marine_rs_sdk::{marine, module_manifest, WasmLoggerBuilder};
 
 module_manifest!();
 
@@ -34,7 +34,7 @@ pub fn greeting(name: String) -> String {
 // Moreover, the test function(s) need to be prefixed by the wasm module namespace, which
 // generally is derived from the project name.
 // if you name the project "greeting", e.g., cargo generate -g https:// ... --name greeting
-// the unit test can be executed as is. If not, the project needs to replace the "greeting" 
+// the unit test can be executed as is. If not, the project needs to replace the "greeting"
 // reference in place
 // if
 // cargo generate -g https:// ... --name project-name
@@ -42,7 +42,7 @@ pub fn greeting(name: String) -> String {
 // let res = project_name.greeting(name.to_string());
 #[cfg(test)]
 mod tests {
-    use fluence_test::marine_test;
+    use marine_rs_sdk_test::marine_test;
 
     #[marine_test(config_path = "../Config.toml", modules_dir = "../artifacts")]
     fn test_greeting() {
