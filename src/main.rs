@@ -30,22 +30,20 @@ pub fn greeting(name: String) -> String {
 // To run tests:
 // cargo test --release
 // Since the unit tests are using the wasm module via the marine_test crate import
-// the modules and Config.toml need to exist. That is, run ./build.sh before you run cargo test.
+// the modules and Config.toml need to exist.
+// That is, run ./build.sh before you run cargo test.
 // Moreover, the test function(s) need to be prefixed by the wasm module namespace, which
 // generally is derived from the project name.
-// if you name the project "greeting", e.g., cargo generate -g https:// ... --name greeting
-// the unit test can be executed as is. If not, the project needs to replace the "greeting"
-// reference in place
-// if
-// cargo generate -g https:// ... --name project-name
-// then
-// let res = project_name.greeting(name.to_string());
+// For example, if you name the project "greeting", e.g., cargo generate -g https:// ... --name greeting,
+// the test below can be executed as is. If not, the project needs to replace the "greeting"
+// reference in place. Let's say our project name is "greetproject" then you need to update the type to:
+// fn test_greeting(greeting: marine_test_env::greetproject::ModuleInterface)
 #[cfg(test)]
 mod tests {
     use marine_rs_sdk_test::marine_test;
 
     #[marine_test(config_path = "../Config.toml", modules_dir = "../artifacts")]
-    fn test_greeting() {
+    fn test_greeting(greeting: marine_test_env::greeting::ModuleInterface) {
         let name = "Marine";
         let res = greeting.greeting(name.to_string());
         assert_eq!(res, format!("Hi, {}", name));
