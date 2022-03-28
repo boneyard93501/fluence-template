@@ -1,0 +1,11 @@
+{
+  "{{ project-name }}": {
+    "name": "{{ project-name }}",
+    "modules": [
+      {
+        "name": "{{ project-name }}",
+        "path": "./artifacts/{{ crate_name }}.wasm"
+      }
+    ]
+  }
+}
