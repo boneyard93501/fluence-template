@@ -1,9 +1,9 @@
 {
-  "{{ crate_name }}": {
-    "name": "{{ package-name }}",
+  "{{ project-name }}": {
+    "name": "{{ project-name }}",
     "modules": [
       {
-        "name": "{{ package-name }}",
+        "name": "{{ project-name }}",
         "path": "./artifacts/{{ crate_name }}.wasm"
       }
     ]
