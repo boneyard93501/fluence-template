@@ -1,6 +1,6 @@
 [package]
 name = "{{ crate_name }}"
-version = "0.1.5"
+version = "0.2.0"
 authors = ["{{authors}}"]
 edition = "2018"
 description = "{{project-name}}, a Marine wasi module"
@@ -15,7 +15,7 @@ marine-rs-sdk = { version = "0.7.0", features = ["logger"] }
 log = "0.4.14"
 
 [dev-dependencies]
-marine-rs-sdk-test = "0.7.0"
+marine-rs-sdk-test = "0.8.1"
 
 [dev]
 [profile.release]
