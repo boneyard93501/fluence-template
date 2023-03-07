@@ -11,12 +11,8 @@ name = "{{ crate_name }}"
 path = "src/main.rs"
 
 [dependencies]
-marine-rs-sdk = { version = "0.7.0", features = ["logger"] }
+marine-rs-sdk = { version = "0.7.1", features = ["logger"] }
 log = "0.4.14"
 
 [dev-dependencies]
-marine-rs-sdk-test = "0.8.1"
-
-[dev]
-[profile.release]
-opt-level = "s"
+marine-rs-sdk-test = "0.8.2"
